@@ -3,7 +3,6 @@ package chernysh.rest;
 import chernysh.actions.GetInfoAction;
 import chernysh.actions.GetInfoActionData;
 import chernysh.actions.GetJobsAction;
-import chernysh.dto.CompanyDTO;
 import chernysh.entities.model.Job;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.web.PagedModel;
@@ -13,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
-import java.util.stream.Collectors;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
@@ -28,11 +26,6 @@ public class ResumeResource {
     @GetMapping(value = "info", produces = APPLICATION_JSON_VALUE)
     public GetInfoActionData getInfo() {
         return getInfoAction.getInfoActionData();
-    }
-
-    @GetMapping(value = "company", produces = APPLICATION_JSON_VALUE)
-    public CompanyDTO getCompanyDTO() {
-        return getInfoAction.getCompany();
     }
 
     @GetMapping("jobs")

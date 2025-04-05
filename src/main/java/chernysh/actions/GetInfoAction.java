@@ -1,10 +1,8 @@
 package chernysh.actions;
 
-import chernysh.dto.CompanyDTO;
 import chernysh.dto.JobDTO;
 import chernysh.dto.NameDTO;
 import chernysh.dto.SkillDTO;
-import chernysh.entities.model.Job;
 import chernysh.entities.service.JobService;
 import chernysh.mapper.CompanyMapper;
 import chernysh.mapper.JobMapper;
@@ -26,11 +24,6 @@ public class GetInfoAction {
     private final PostMapper postMapper;
     private final JobService jobService;
     private final SkillMapper skillMapper;
-
-    public CompanyDTO getCompany() {
-        CompanyDTO companyDTO = companyMapper.toDTO(jobService.getCompany(1));
-        return companyDTO;
-    }
 
     public NameDTO getName() {
         NameDTO name = new NameDTO();
@@ -55,7 +48,7 @@ public class GetInfoAction {
 
                     Period period = Period.between(jobDTO.getStartDate(),
                             jobDTO.getEndDate());
-                    String jobAmount = "";
+                    String jobAmount;
 
                     if(period.getYears() == 1) {
                         jobAmount = period.getYears() + " год ";

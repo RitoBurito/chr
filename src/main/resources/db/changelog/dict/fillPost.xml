@@ -11,13 +11,13 @@
 
     <changeSet id="2" author="chernysh">
         <sql>
-            INSERT INTO post (post_name) VALUES ('Младший разработчик')
+            INSERT INTO post (post_name) VALUES ('Специалист сопровождения')
         </sql>
     </changeSet>
 
     <changeSet id="3" author="chernysh">
         <sql>
-            INSERT INTO post (post_name) VALUES ('Специалист сопровождения')
+            INSERT INTO post (post_name) VALUES ('Младший разработчик')
         </sql>
     </changeSet>
 

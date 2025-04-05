@@ -4,74 +4,16 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.6.xsd">
 
-    <changeSet id="createCompanyTable" author="chernysh">
-        <createTable tableName="company">
-            <column name="company_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="company_name" type="varchar(50)"/>
-        </createTable>
-    </changeSet>
+    <include file="dict/changelog-createCompanyTable.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-createPostTable.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-createJobTable.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-createSkillsTable.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-createFunctionTable.xml" relativeToChangelogFile="true"/>
 
-    <changeSet id="createPostTable" author="chernysh">
-        <createTable tableName="post">
-            <column name="post_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="post_name" type="varchar(50)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="createJobTable" author="chernysh">
-        <createTable tableName="job">
-            <column name="job_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="company_id" type="int">
-                <constraints foreignKeyName="fk_company_id" references="company(company_id)"/>
-            </column>
-            <column name="post_id" type="int">
-                <constraints foreignKeyName="fk_post_id" references="post(post_id)"/>
-            </column>
-            <column name="job_start" type="timestamp"/>
-            <column name="job_end" type="timestamp"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="createSkillsTable" author="chernysh">
-        <createTable tableName="skill">
-            <column name="skill_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="skill_name" type="varchar(50)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="createFunctionTable" author="chernysh">
-        <createTable tableName="function">
-            <column name="function_id" type="int" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="job_id" type="int">
-                <constraints foreignKeyName="fk_job_id" references="job(job_id)" nullable="false"/>
-            </column>
-            <column name="function_comment" type="varchar(200)"/>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="createFunctionSkillTable" author="chernysh">
-        <createTable tableName="function_skill">
-            <column name="function_id" type="int">
-                <constraints foreignKeyName="fk_function_id" references="function(function_id)" nullable="false"/>
-            </column>
-            <column name="skill_id" type="int">
-                <constraints foreignKeyName="fk_skill_id" references="skill(skill_id)"/>
-            </column>
-        </createTable>
-    </changeSet>
-
-    <changeSet id="addFunctionSkillPrimaryKey" author="chernysh">
-        <addPrimaryKey tableName="function_skill" columnNames="function_id, skill_id"/>
-    </changeSet>
+    <include file="dict/changelog-fillCompany.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-fillPost.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-fillSkill.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-fillJob.xml" relativeToChangelogFile="true"/>
+    <include file="dict/changelog-fillFunction.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>

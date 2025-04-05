@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="1" author="chernysh">
+        <sql>
+            INSERT INTO job (company_id, post_id, job_start, job_end)
+            VALUES (2, 2, '2023-04-01', '2025-03-01')
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="chernysh">
+        <sql>
+            INSERT INTO job (company_id, post_id, job_start, job_end)
+            VALUES (1, 1, '2018-08-01', '2021-11-01')
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="chernysh">
+        <sql>
+            INSERT INTO job (company_id, post_id, job_start, job_end)
+            VALUES (2, 3, '2021-11-01', '2023-04-01')
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

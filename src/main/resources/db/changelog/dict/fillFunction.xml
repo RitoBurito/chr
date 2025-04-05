@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="1" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (2, 'Отвечала на вопросы касательно работы поставляемой программы')
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (2, 'Помогала с решением возникающих проблем с программным обеспечением')
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (2, 'Составление DML-запросов на языке PL SQL разного уровня сложности')
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (2, 'Чтение и анализ программного кода на языке Java')
+        </sql>
+    </changeSet>
+
+    <changeSet id="5" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (2, 'Чтение и анализ документации')
+        </sql>
+    </changeSet>
+
+    <changeSet id="6" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (3, 'Решение задач по разработке отдельных пунктов меню во фронт-офисной системе как в части фронт-, так и бэк-энда')
+        </sql>
+    </changeSet>
+
+    <changeSet id="7" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (3, 'Анализ структуры базы данных и составление select запросов')
+        </sql>
+    </changeSet>
+
+    <changeSet id="8" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (3, 'Переиспользование или доработка уже существующего программного кода')
+        </sql>
+    </changeSet>
+
+    <changeSet id="9" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (1, 'Ведение баз данных - загрузка больших массивов данных, корректировка данных')
+        </sql>
+    </changeSet>
+
+    <changeSet id="10" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (1, 'Разработка решений для автоматизации процессов загрузки данных')
+        </sql>
+    </changeSet>
+
+    <changeSet id="11" author="chernysh">
+        <sql>
+            INSERT INTO function (job_id, function_comment)
+            VALUES (1, 'Документооборот отдела')
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet id="createJobTable" author="chernysh">
+        <createTable tableName="job">
+            <column name="job_id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="company_id" type="int">
+                <constraints foreignKeyName="fk_company_id" references="company(company_id)"/>
+            </column>
+            <column name="post_id" type="int">
+                <constraints foreignKeyName="fk_post_id" references="post(post_id)"/>
+            </column>
+            <column name="job_start" type="timestamp"/>
+            <column name="job_end" type="timestamp"/>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
